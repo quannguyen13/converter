@@ -1,8 +1,17 @@
-// document.getElementById("output").style.visibility = "hidden";
-document.getElementById("lbsInput").addEventListener("input", function(e) {
-//   document.getElementById("output").style.visibility = "visible";
-  let lbs = e.target.value;
-  document.getElementById("gramsOutput").innerHTML = lbs / 0.0022046;
-  document.getElementById("kgOutput").innerHTML = lbs / 2.2046;
-  document.getElementById("ozOutput").innerHTML = lbs * 16;
+
+document.getElementById("inputValue").addEventListener("input", function(e) {
+  var x1 = document.getElementById("mySelect").selectedIndex;
+  var y1 = document.getElementsByTagName("option")[x1].value
+  var x2 = document.getElementById("mySelect2").selectedIndex;
+  var y2 = document.getElementsByTagName("option")[x2].value
+  if (y1 == "Lbs" && y2 == "Kg") {
+    let lbs = e.target.value;
+    document.getElementById("result").innerHTML = lbs / 2.2046;
+    
+  }
+  else if (y1 == "Kg" && y2 == "Lbs") {
+    let kg = e.target.value;
+    document.getElementById("result").innerHTML = kg * 2.2046;
+    
+  }
 });
