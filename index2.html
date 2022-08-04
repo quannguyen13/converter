@@ -11,16 +11,17 @@
 <body>
     <div class="container">
         <div class="row">
-          <div class="col-md-6 offset-md-3">
-            <h1 class="text-center mb-3">Unit Converter</h1>
+          <div class="col-md-7 offset-md-3">
+            <h1 class="text-center mb-3 text-white">Unit Converter</h1>
             <form>
-              <label for="mySelect">Choose a unit:</label>
+              <label for="mySelect" class="text-white">CONVERT:</label>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
               <select name="select1" id="select1">
                 <option value=""></option>
                 <option value="weight">weight</option>
                 <option value="distance">distance</option>
                 <option value="temp">temp</option>
+                <option value="lenght">lenght</option>
               </select>
               
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -32,6 +33,8 @@
                 <option value="distance">km</option>
                 <option value="temp">F</option>
                 <option value="temp">C</option>
+                <option value="lenght">MM</option>
+                <option value="lenght">Inch</option>
               </select>
               <div class="form-group">
                 <input id="inputValue" type="number" class="form-control form-control-lg" placeholder="Enter a value...">
@@ -40,13 +43,15 @@
 
 
             <div id="output">
-              <label for="mySelect2">Result in:</label>
+              <label for="mySelect2" class="text-white">RESULT IN:</label>
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
               <select name="select3" id="select3">
                 <option value=""></option>
                 <option value="weight">weight</option>
                 <option value="distance">distance</option>
                 <option value="temp">temp</option>
+                <option value="lenght">lenght</option>
+
               </select>
               
               <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
@@ -58,9 +63,11 @@
                 <option value="distance">km</option>
                 <option value="temp">F</option>
                 <option value="temp">C</option>
+                <option value="lenght">MM</option>
+                <option value="lenght">Inch</option>
               </select>
-              <div class="card bg-primary text-light mb-2">
-                <div class="card-block">
+              <div class="text-light mb-2">
+                <div class="card-block text-center" id="card-block">
 
                   <h4>Result:</h4>
                   <div id="result"></div>
@@ -68,7 +75,7 @@
               </div>
 
 
-              <button onClick="window.location.reload();">Refresh</button>
+              <button id="btn" onClick="window.location.reload();">Refresh</button>
             </div>
           </div>
         </div>

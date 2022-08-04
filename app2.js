@@ -39,19 +39,23 @@ document.getElementById("inputValue").addEventListener("input", function(e) {
     var x4b = document.getElementById("select4").selectedIndex
     console.dir(x2b);
     console.log(x4b);
-
+    
 if (y1 == "weight" && y3 == "weight") {
+  
     if ( x2b == 1 && x4b == 0) {
       let lbs = e.target.value;
-      document.getElementById("result").innerHTML = lbs / 2.2046; 
+      document.getElementById("result").innerHTML = (lbs / 2.2046).toFixed(3); 
+      document.getElementById("result").style.fontSize = "30px";  
   }
   
     else if ( x2b == 0 && x4b == 1 ) {
       let kg = e.target.value;
-      document.getElementById("result").innerHTML = kg * 2.2046;  
+      document.getElementById("result").innerHTML = (kg * 2.2046).toFixed(3);  
+      document.getElementById("result").style.fontSize = "30px";  
   }
     else if ( x2b == x4b ){
-      document.getElementById("result").innerHTML = "Units are SAME and not convertable";
+      document.getElementById("result").innerHTML = "Units are SAME and NOT convertable";
+      document.getElementById("card-block").style.background = "red"
   }
 }
 
@@ -62,16 +66,19 @@ if (y1 == "weight" && y3 == "weight") {
 else if (y1 == "distance" && y3 == "distance"){
     if ( x2b == 0 && x4b == 1) {
       let miles = e.target.value;
-      document.getElementById("result").innerHTML = miles * 1.609;
+      document.getElementById("result").innerHTML = (miles * 1.609).toFixed(3);
+      document.getElementById("result").style.fontSize = "30px";  
 
   }
     else if ( x2b == 1 && x4b == 0) {
       let km = e.target.value;
-      document.getElementById("result").innerHTML = km / 1.609;
+      document.getElementById("result").innerHTML = (km / 1.609).toFixed(3);
+      document.getElementById("result").style.fontSize = "30px";  
       
   }
     else if ( x2b == x4b ){
-      document.getElementById("result").innerHTML = "Units are SAME and not convertable";
+      document.getElementById("result").innerHTML = "Units are SAME and NOT convertable";
+      document.getElementById("card-block").style.background = "red"
   }
 }
 
@@ -81,24 +88,49 @@ else if (y1 == "distance" && y3 == "distance"){
 else if (y1 == "temp" && y3 == "temp"){
     if ( x2b == 0 && x4b == 1) {
       let f = e.target.value;
-      document.getElementById("result").innerHTML = (f - 32) * 5/9;
+      document.getElementById("result").innerHTML = ((f - 32) * 5/9).toFixed(3);
+      document.getElementById("result").style.fontSize = "30px";  
 
   }
     else if ( x2b == 1 && x4b == 0) {
       let c = e.target.value;
-      document.getElementById("result").innerHTML = (c * 9/5) + 32 ;
+      document.getElementById("result").innerHTML = ((c * 9/5) + 32).toFixed(3) ;
+      document.getElementById("result").style.fontSize = "30px";  
       
   }
     else if ( x2b == x4b ){
-      document.getElementById("result").innerHTML = "Units are SAME and not convertable";
+      document.getElementById("result").innerHTML = "Units are SAME and NOT convertable";
+      document.getElementById("card-block").style.background = "red"
+  }
+}
+
+else if (y1 == "lenght" && y3 == "lenght"){
+    if ( x2b == 0 && x4b == 1) {
+      let mm = e.target.value;
+      document.getElementById("result").innerHTML = (mm / 25.4).toFixed(3)
+      document.getElementById("result").style.fontSize = "30px";  
+
+  }
+    else if ( x2b == 1 && x4b == 0) {
+      let inch = e.target.value;
+      document.getElementById("result").innerHTML = (inch * 25.4).toFixed(3)
+      document.getElementById("result").style.fontSize = "30px";  
+      
+  }
+    else if ( x2b == x4b ){
+      document.getElementById("result").innerHTML = "Units are SAME and NOT convertable";
+      document.getElementById("card-block").style.background = "red"
   }
 }
 
 
 else if ( y1 !== y3 ) {
       document.getElementById("result").innerHTML = "Catergories are difference and NOT convertable";
+      document.getElementById("card-block").style.background = "red"
 }
+
 
 
 }
 )
+// 
